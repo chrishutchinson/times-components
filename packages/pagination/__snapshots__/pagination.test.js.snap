@@ -61,7 +61,7 @@ exports[`renders compact above breakpoint 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          href={null}
+          href="./2"
           onPress={[Function]}
           style={
             Object {
@@ -137,7 +137,7 @@ exports[`renders correctly 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          href={null}
+          href="./2"
           onPress={[Function]}
           style={
             Object {
@@ -212,7 +212,7 @@ exports[`renders prev and next link 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          href={null}
+          href="./1"
           onPress={[Function]}
           style={
             Object {
@@ -237,7 +237,7 @@ exports[`renders prev and next link 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          href={null}
+          href="./3"
           onPress={[Function]}
           style={
             Object {
@@ -312,7 +312,7 @@ exports[`renders prev link 1`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          href={null}
+          href="./2"
           onPress={[Function]}
           style={
             Object {
@@ -389,7 +389,7 @@ exports[`renders prev link 2`] = `
           accessible={true}
           allowFontScaling={true}
           ellipsizeMode="tail"
-          href={null}
+          href="./2"
           onPress={[Function]}
           style={
             Object {

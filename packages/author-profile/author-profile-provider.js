@@ -54,9 +54,7 @@ const transformResponse = response => {
   if (author) {
     return {
       data: Object.assign({}, author, {
-        count: get(response, "data.author.articles.count"),
-        pageSize: 10,
-        page: 1
+        count: get(response, "data.author.articles.count")
       }),
       error: null,
       isLoading: false

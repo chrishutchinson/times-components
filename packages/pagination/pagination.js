@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TouchableHighlight, View } from "react-native";
 import PropTypes from "prop-types";
+import pagination from "./pagination-helper";
 
 const styles = StyleSheet.create({
   compact: {
@@ -46,11 +47,34 @@ class Pagination extends React.Component {
   constructor(props) {
     super(props);
 
+    const {
+      compact,
+      count,
+      generatePageLink,
+      page,
+      pageSize,
+      onNext,
+      onPrev
+    } = props;
+
     this.state = {
-      isCompact: false
+      compact,
+      count,
+      isCompact: false,
+      generatePageLink,
+      page,
+      pageSize,
+      onNext,
+      onPrev
     };
 
     this.handleLayout = this.handleLayout.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      ...nextProps
+    });
   }
 
   handleLayout({ nativeEvent }) {
@@ -65,13 +89,12 @@ class Pagination extends React.Component {
     const {
       compact,
       count,
-      nextPageLinking,
+      generatePageLink,
       page,
       pageSize,
-      prevPageLinking,
       onNext,
       onPrev
-    } = this.props;
+    } = this.state;
 
     const startResult = (page - 1) * pageSize + 1;
     const finalResult = Math.min(count, page * pageSize);
@@ -81,9 +104,9 @@ class Pagination extends React.Component {
       ? <TouchableHighlight>
           <Text
             accessibilityRole="link"
-            href={prevPageLinking}
+            href={generatePageLink(page - 1)}
             style={styles.arrows}
-            onPress={() => onPrev(prevPageLinking)}
+            onPress={() => onPrev(page - 1)}
           >
             {"< Previous page"}
           </Text>
@@ -94,9 +117,9 @@ class Pagination extends React.Component {
       ? <TouchableHighlight>
           <Text
             accessibilityRole="link"
-            href={nextPageLinking}
+            href={generatePageLink(page + 1)}
             style={styles.arrows}
-            onPress={() => onNext(nextPageLinking)}
+            onPress={() => onNext(page + 1)}
           >
             {"Next page >"}
           </Text>
@@ -126,22 +149,22 @@ class Pagination extends React.Component {
 Pagination.propTypes = {
   compact: PropTypes.bool,
   count: PropTypes.number.isRequired,
-  nextPageLinking: PropTypes.string,
   page: PropTypes.number,
   pageSize: PropTypes.number,
-  prevPageLinking: PropTypes.string,
+  generatePageLink: PropTypes.func,
   onNext: PropTypes.func,
   onPrev: PropTypes.func
 };
 
 Pagination.defaultProps = {
   compact: false,
-  nextPageLinking: null,
+  generatePageLink: page => `./${page}`,
   page: 1,
   pageSize: 20,
-  prevPageLinking: null,
   onNext: () => {},
   onPrev: () => {}
 };
 
 export default Pagination;
+
+export { pagination };

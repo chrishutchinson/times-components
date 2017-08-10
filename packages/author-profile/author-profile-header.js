@@ -24,6 +24,7 @@ const AuthorProfileHeader = ({
   count,
   biography: bio,
   page,
+  generatePageLink,
   image: uri,
   jobTitle: title,
   name,
@@ -42,12 +43,11 @@ const AuthorProfileHeader = ({
 
   const paginationProps = {
     count,
+    generatePageLink,
     onNext,
     onPrev,
-    nextPageLinking: "https://www.thetimes.co.uk?page=3",
     page,
-    pageSize,
-    prevPageLinking: "https://www.thetimes.co.uk?page=1"
+    pageSize
   };
 
   return (
@@ -66,6 +66,7 @@ AuthorProfileHeader.propTypes = {
   biography: AuthorHead.propTypes.bio,
   count: Pagination.propTypes.count,
   image: AuthorHead.propTypes.uri,
+  generatePageLink: Pagination.propTypes.page,
   jobTitle: AuthorHead.propTypes.title,
   name: AuthorHead.propTypes.name,
   onNext: PropTypes.func,
@@ -79,6 +80,7 @@ AuthorProfileHeader.defaultProps = {
   count: 0,
   biography: null,
   page: 0,
+  generatePageLink: page => `?page=${page}`,
   image: null,
   jobTitle: null,
   name: null,

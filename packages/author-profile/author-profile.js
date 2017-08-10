@@ -1,4 +1,5 @@
 import React from "react";
+import pick from "lodash.pick";
 import PropTypes from "prop-types";
 import AuthorProfileContent from "./author-profile-content";
 import AuthorProfileEmpty from "./author-profile-empty";
@@ -15,7 +16,13 @@ const AuthorProfile = props => {
   }
 
   if (!!props.data === true) {
-    return <AuthorProfileContent {...props.data} />;
+    const data = Object.assign(
+      {},
+      props.data,
+      pick(props, ["onNext", "onPrev", "pageSize", "page"])
+    );
+
+    return <AuthorProfileContent {...data} />;
   }
 
   return <AuthorProfileEmpty />;

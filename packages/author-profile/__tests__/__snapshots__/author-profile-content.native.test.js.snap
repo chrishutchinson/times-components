@@ -3269,7 +3269,7 @@ exports[`renders profile content 1`] = `
                       accessible={true}
                       allowFontScaling={true}
                       ellipsizeMode="tail"
-                      href="https://www.thetimes.co.uk?page=3"
+                      href="?page=2"
                       onPress={[Function]}
                       style={
                         Object {
@@ -6856,7 +6856,7 @@ exports[`renders profile content 2`] = `
                       accessible={true}
                       allowFontScaling={true}
                       ellipsizeMode="tail"
-                      href="https://www.thetimes.co.uk?page=3"
+                      href="?page=2"
                       onPress={[Function]}
                       style={
                         Object {
@@ -8973,7 +8973,7 @@ exports[`renders profile header 1`] = `
                 accessible={true}
                 allowFontScaling={true}
                 ellipsizeMode="tail"
-                href="https://www.thetimes.co.uk?page=3"
+                href="?page=2"
                 onPress={[Function]}
                 style={
                   Object {
