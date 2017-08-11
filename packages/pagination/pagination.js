@@ -72,9 +72,11 @@ class Pagination extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      ...nextProps
-    });
+    this.setState(
+      Object.assign({}, nextProps, {
+        isCompact: this.state.isCompact
+      })
+    );
   }
 
   handleLayout({ nativeEvent }) {

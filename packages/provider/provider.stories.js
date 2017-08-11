@@ -1,6 +1,8 @@
 import React from "react";
 import { Text } from "react-native";
 import { storiesOf } from "@storybook/react-native";
+import { pagination } from "@times-components/pagination";
+
 import {
   ApolloClient,
   ApolloProvider,
@@ -64,13 +66,16 @@ const client = new ApolloClient({
   fragmentMatcher
 });
 
+const PageChanger = pagination(AuthorProfileProvider);
+
 storiesOf("Provider", module).add("AuthorProfileProvider", () =>
   <ApolloProvider client={client}>
-    <AuthorProfileProvider
+    <PageChanger
+      generatePageLink={page => `https://www.thetimes.co.uk?page=${page}`}
+      imageRatio="3:2"
       slug="fiona-hamilton"
       page={1}
-      pageSize={10}
-      imageRatio="3:2"
+      pageSize={3}
     />
   </ApolloProvider>
 );

@@ -5,8 +5,9 @@ export default Component => {
   class Helper extends React.Component {
     constructor(props) {
       super(props);
-      this.handleChangePage = this.handleChangePage.bind(this);
       this.state = props;
+
+      this.handleChangePage = this.handleChangePage.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {

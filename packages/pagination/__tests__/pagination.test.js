@@ -1,9 +1,9 @@
 /* eslint-env jest */
 
 import "react-native";
-import { shallow } from "enzyme";
 import React from "react";
-import Pagination from "./pagination";
+import { shallow } from "enzyme";
+import Pagination from "../pagination";
 
 it("renders correctly", () => {
   const props = {
