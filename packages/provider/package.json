@@ -47,7 +47,7 @@
     "nock": "^9.0.14",
     "react-native": "0.44.1",
     "react-test-renderer": "16.0.0-alpha.6",
-    "webpack": "2.6.1"
+    "webpack": "3.3.0"
   },
   "dependencies": {
     "@times-components/author-profile": "0.2.0",

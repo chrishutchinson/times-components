@@ -1,5 +1,4 @@
 import React from "react";
-import pick from "lodash.pick";
 import PropTypes from "prop-types";
 import AuthorProfileContent from "./author-profile-content";
 import AuthorProfileEmpty from "./author-profile-empty";
@@ -16,13 +15,13 @@ const AuthorProfile = props => {
   }
 
   if (!!props.data === true) {
-    const data = Object.assign(
-      {},
-      props.data,
-      pick(props, ["onNext", "onPrev", "pageSize", "page"])
-    );
-
-    return <AuthorProfileContent {...data} />;
+    const extra = {
+      onNext: props.onNext,
+      onPrev: props.onPrev,
+      page: props.page,
+      pageSize: props.pageSize
+    };
+    return <AuthorProfileContent {...props.data} {...extra} />;
   }
 
   return <AuthorProfileEmpty />;
@@ -31,13 +30,21 @@ const AuthorProfile = props => {
 AuthorProfile.propTypes = {
   data: PropTypes.shape(AuthorProfileContent.propTypes),
   error: PropTypes.shape(),
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  onNext: AuthorProfileContent.propTypes.onNext,
+  onPrev: AuthorProfileContent.propTypes.onPrev,
+  page: AuthorProfileContent.propTypes.page,
+  pageSize: AuthorProfileContent.propTypes.pageSize
 };
 
 AuthorProfile.defaultProps = {
   data: null,
   error: null,
-  isLoading: true
+  isLoading: true,
+  onNext: () => {},
+  onPrev: () => {},
+  page: 1,
+  pageSize: 10
 };
 
 export default AuthorProfile;

@@ -1519,6 +1519,8 @@ exports[`renders profile 1`] = `
   image=""
   jobTitle="Legal Editor"
   name="Fiona Hamilton"
+  onNext={[Function]}
+  onPrev={[Function]}
   page={1}
   pageSize={10}
   twitter="jdoe"
@@ -8707,6 +8709,27 @@ exports[`renders profile empty 1`] = `
 >
   Empty
 </Text>
+`;
+
+exports[`renders profile error 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    An error ocurred
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    {
+      "error": "error"
+    }
+  </Text>
+</View>
 `;
 
 exports[`renders profile header 1`] = `
