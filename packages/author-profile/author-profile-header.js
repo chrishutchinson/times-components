@@ -66,7 +66,7 @@ AuthorProfileHeader.propTypes = {
   biography: AuthorHead.propTypes.bio,
   count: Pagination.propTypes.count,
   image: AuthorHead.propTypes.uri,
-  generatePageLink: Pagination.propTypes.page,
+  generatePageLink: Pagination.propTypes.generatePageLink,
   jobTitle: AuthorHead.propTypes.title,
   name: AuthorHead.propTypes.name,
   onNext: PropTypes.func,
