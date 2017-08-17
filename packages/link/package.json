@@ -1,7 +1,8 @@
 {
-  "name": "@times-components/brightcove-video",
-  "version": "0.3.0",
-  "main": "brightcove-video",
+  "name": "@times-components/link",
+  "version": "0.1.0",
+  "description": "component to handle links and navigation",
+  "main": "link.js",
   "scripts": {
     "flow": "node_modules/flow-bin/cli.js",
     "test:watch": "jest --bail --verbose --watchAll",
@@ -10,12 +11,17 @@
   "jest": {
     "preset": "react-native",
     "rootDir": "../../",
-    "testEnvironment": "jsdom",
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!**/*.stories.js",
+      "!__tests__/**",
+      "!coverage/**"
+    ],
     "transformIgnorePatterns": [
       "node_modules/(?!@times-components)/"
     ],
     "testMatch": [
-      "<rootDir>/packages/brightcove-video/__tests__/*"
+      "<rootDir>/packages/link/__tests__/**/*.test.js"
     ]
   },
   "repository": {
@@ -27,8 +33,7 @@
     "react",
     "native",
     "web",
-    "video",
-    "brightcove",
+    "link",
     "component"
   ],
   "license": "BSD-3-Clause",
@@ -45,26 +50,18 @@
     "babel-preset-react-native": "1.9.2",
     "flow-bin": "0.42.0",
     "jest": "20.0.4",
-    "react-dom": "15.5.4",
-    "react-native": "0.44.1",
-    "react-native-web": "0.0.97",
     "react-test-renderer": "15.5.4",
     "webpack": "3.3.0"
   },
   "dependencies": {
-    "prop-types": "15.5.10"
-  },
-  "peerDependencies": {
-    "@storybook/addon-actions": "3.0.0",
-    "@storybook/react-native": "3.0.0",
-    "react": ">=16.0.0-alpha.6",
-    "react-native": ">=0.44.1",
+    "prop-types": "15.5.10",
+    "react": "16.0.0-alpha.6",
+    "react-dom": "15.5.4",
+    "react-native": "0.44.1",
     "react-native-web": "0.0.97"
   },
-  "_timesComponentsCliVariables": {
-    "component": "BrightcoveVideo",
-    "packageDescription": "Brightcove component",
-    "packageName": "brightcove-video"
+  "peerDependencies": {
+    "@storybook/react-native": "3.1.6"
   },
   "publishConfig": {
     "access": "public"
