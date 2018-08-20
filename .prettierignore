@@ -21,7 +21,7 @@ storybook-static
 *.html
 *.sh
 *.log
-packages
+#packages
 android-app
 ios-app
 coverage
