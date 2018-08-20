@@ -1,8 +1,9 @@
-import { View } from "react-native";
-import withResponsiveStyles from "@times-components/responsive-styles";
+import { Text, View } from "react-native";
+import styled from "styled-components";
+import { breakpoints, spacing } from "@times-components/styleguide";
 
-const PuffWrapper = withResponsiveStyles(View, {
-  smallUp: () => `
+export const PuffWrapper = styled(View)`
+  @media (min-width: ${breakpoints.small}px) {
     .puffImage {
       flex-grow: 2 !important;
       margin-bottom: 0;
@@ -13,7 +14,5 @@ const PuffWrapper = withResponsiveStyles(View, {
       flex-grow: 2.7 !important;
       min-width: 220px;
     }
-  `
-});
-
-export default PuffWrapper;
+  }
+`;

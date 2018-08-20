@@ -1,3 +1,3 @@
-import PuffWrapper from "./styles/responsive";
+import { PuffWrapper } from "./styles/responsive";
 
 export default PuffWrapper;
